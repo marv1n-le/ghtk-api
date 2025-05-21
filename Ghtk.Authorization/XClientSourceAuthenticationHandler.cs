@@ -5,10 +5,10 @@ using Microsoft.Extensions.Options;
 
 namespace Ghtk.Authorization;
 
-public class XClientSourceAuthenticationHandler : AuthenticationHandler<AuthenticationSchemeOptions>
+public class XClientSourceAuthenticationHandler : AuthenticationHandler<XClientSourceAuthenticationHandlerOptions>
 {
     public XClientSourceAuthenticationHandler(
-        IOptionsMonitor<AuthenticationSchemeOptions> options,
+        IOptionsMonitor<XClientSourceAuthenticationHandlerOptions> options,
         ILoggerFactory logger,
         UrlEncoder encoder,
         ISystemClock clock) : base(options, logger, encoder, clock)
@@ -42,3 +42,4 @@ public class XClientSourceAuthenticationHandler : AuthenticationHandler<Authenti
         return Task.FromResult(AuthenticateResult.Success(ticket));
     }
 }
+
