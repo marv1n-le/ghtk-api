@@ -1,4 +1,5 @@
 using Ghtk.Api.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ghtk.Api.Controllers;
@@ -13,6 +14,7 @@ public class ShipmentServiceController : ControllerBase
     
     [HttpPost]
     [Route("order")]
+    [Authorize]
     public IActionResult CreateOrder([FromBody] CreateOrder shipmentOrder)
     {
         return Ok();

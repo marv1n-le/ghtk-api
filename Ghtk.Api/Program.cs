@@ -1,3 +1,8 @@
+using ClientAuthentication;
+using ClientAuthentication.API.AuthenticationHandler;
+using Ghtk.Authorization;
+using Microsoft.AspNetCore.Authentication;
+
 namespace Ghtk.Api;
 
 public class Program
@@ -10,6 +15,15 @@ public class Program
         builder.Services.AddAuthorization();
 
         builder.Services.AddControllers();
+        
+        IClientSourceAuthenticationHandler clientSourceAuthenticationHandler = new RemoteClientSourceAuthentication(builder.Configuration["AuthenticationService"] ?? throw new InvalidOperationException());
+        
+        builder.Services.AddAuthentication("X-Client-Source").AddXClientSource(options =>
+        {
+            options.ClientValidator = (clientSource, token, principal) => clientSourceAuthenticationHandler.Validate(clientSource);
+            options.IssuerSigningKey = builder.Configuration["Jwt:IssuerSigningKey"] ?? string.Empty;
+            
+        });
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
@@ -25,6 +39,8 @@ public class Program
 
         app.UseHttpsRedirection();
 
+        app.UseAuthentication();
+        
         app.UseAuthorization();
 
         app.MapControllers();
