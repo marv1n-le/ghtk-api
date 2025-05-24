@@ -2,13 +2,13 @@ using System.Text.Json.Serialization;
 
 namespace Ghtk.Api.Models;
 
-public partial class SubmitOrderResponse : ApiResult
+public class SubmitOrderResponse : ApiResult
 {
     [JsonPropertyName("order")]
     public CreateOrderResponse Order { get; set; }
 }
 
-public partial class CreateOrderResponse
+public class CreateOrderResponse
 {
     [JsonPropertyName("partner_id")]
     public string PartnerId { get; set; }
@@ -26,7 +26,7 @@ public partial class CreateOrderResponse
     public double InsuranceFee { get; set; }
 
     [JsonPropertyName("tracking_id")]
-    public long TrackingId { get; set; }
+    public string TrackingId { get; set; }
 
     [JsonPropertyName("estimated_pick_time")]
     public string EstimatedPickTime { get; set; }
@@ -35,7 +35,7 @@ public partial class CreateOrderResponse
     public string EstimatedDeliverTime { get; set; }
 
     [JsonPropertyName("products")]
-    public Product[] Products { get; set; }
+    public OrderProduct[] Products { get; set; }
 
     [JsonPropertyName("status_id")]
     public long StatusId { get; set; }

@@ -2,13 +2,13 @@ using System.Text.Json.Serialization;
 
 namespace Ghtk.Api.Models;
 
- public partial class GetOrderStatusResponse : ApiResult
+ public class GetOrderStatusResponse : ApiResult
     {
         [JsonPropertyName("order")]
-        public Order Order { get; set; }
+        public StatusOrder Order { get; set; }
     }
 
-    public partial class Order
+    public class StatusOrder
     {
         [JsonPropertyName("label_id")]
         public string LabelId { get; set; } = default!;

@@ -41,6 +41,7 @@ public class XClientSourceAuthenticationHandler : AuthenticationHandler<XClientS
             // var identity = new ClaimsIdentity(Scheme.Name);
             // identity.AddClaim(new Claim("X-Client-Source", clientSourceValue));
             // var principal = new ClaimsPrincipal(identity);
+            principal.Claims.Append(new Claim("PartnerId", clientSourceValue));
             var ticket = new AuthenticationTicket(principal, Scheme.Name);
 
             return Task.FromResult(AuthenticateResult.Success(ticket));

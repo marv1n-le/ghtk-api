@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientAuthentication", "Cli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientAuthentication.API", "ClientAuthentication.API\ClientAuthentication.API.csproj", "{F8F98DB2-010F-42B4-9CD2-24E1FF970D56}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ghtk.Repository.Abstractions", "Ghtk.Repository.Abstractions\Ghtk.Repository.Abstractions.csproj", "{0F0C1361-32B9-4B69-BCB9-C808839ECDED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ghtk.Repository.MongoDb", "Ghtk.Repository.MongoDb\Ghtk.Repository.MongoDb.csproj", "{4841FF92-CF11-43A4-B843-DDD4F2D68327}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,13 @@ Global
 		{F8F98DB2-010F-42B4-9CD2-24E1FF970D56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8F98DB2-010F-42B4-9CD2-24E1FF970D56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8F98DB2-010F-42B4-9CD2-24E1FF970D56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F0C1361-32B9-4B69-BCB9-C808839ECDED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F0C1361-32B9-4B69-BCB9-C808839ECDED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F0C1361-32B9-4B69-BCB9-C808839ECDED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F0C1361-32B9-4B69-BCB9-C808839ECDED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4841FF92-CF11-43A4-B843-DDD4F2D68327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4841FF92-CF11-43A4-B843-DDD4F2D68327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4841FF92-CF11-43A4-B843-DDD4F2D68327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4841FF92-CF11-43A4-B843-DDD4F2D68327}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

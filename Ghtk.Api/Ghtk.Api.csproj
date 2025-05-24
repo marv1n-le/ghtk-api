@@ -15,6 +15,8 @@
       <ProjectReference Include="..\ClientAuthentication.API\ClientAuthentication.API.csproj" />
       <ProjectReference Include="..\ClientAuthentication\ClientAuthentication.csproj" />
       <ProjectReference Include="..\Ghtk.Authorization\Ghtk.Authorization.csproj" />
+      <ProjectReference Include="..\Ghtk.Repository.Abstractions\Ghtk.Repository.Abstractions.csproj" />
+      <ProjectReference Include="..\Ghtk.Repository.MongoDb\Ghtk.Repository.MongoDb.csproj" />
     </ItemGroup>
 
 </Project>
